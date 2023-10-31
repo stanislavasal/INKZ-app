@@ -197,7 +197,7 @@ class AboutUsViewController: UIViewController, UIScrollViewDelegate {
         ])
  
         let labelTransparent = UILabel()
-        labelTransparent.text = "Прозрачная платформа с возможностью просмотра отзывов о мастерах"
+        labelTransparent.text = "Прозрачная платформа с возможностью просмотра отзывов о мастерах"
         labelTransparent.font = UIFont(name: "SuisseIntl-Regular", size: 16)
         labelTransparent.numberOfLines = 0
         labelTransparent.lineBreakMode = .byWordWrapping
