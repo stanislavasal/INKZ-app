@@ -17,6 +17,8 @@
 		EE09099B2ACDA29E00A8B8C5 /* ProfileStorageLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09099A2ACDA29E00A8B8C5 /* ProfileStorageLogic.swift */; };
 		EE09099D2ACDA39800A8B8C5 /* ProfileStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09099C2ACDA39800A8B8C5 /* ProfileStorageWorker.swift */; };
 		EE7C30CB2AEC5130006F5C42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C30CA2AEC5130006F5C42 /* MainViewController.swift */; };
+		EE9CD7262B378DF90064E3A1 /* TattooFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9CD7252B378DF90064E3A1 /* TattooFeedViewController.swift */; };
+		EE9CD7282B3797E70064E3A1 /* MasterFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9CD7272B3797E70064E3A1 /* MasterFeedViewController.swift */; };
 		EEB646BA2AF08FCF001F2DEE /* SuisseIntl-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEB646B92AF08FCF001F2DEE /* SuisseIntl-Bold.otf */; };
 		EEB646BC2AF0933E001F2DEE /* SuisseIntl-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEB646BB2AF0933E001F2DEE /* SuisseIntl-Medium.otf */; };
 		EEB646BE2AF09357001F2DEE /* SuisseIntl-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEB646BD2AF09357001F2DEE /* SuisseIntl-Regular.otf */; };
@@ -40,6 +42,8 @@
 		EE09099A2ACDA29E00A8B8C5 /* ProfileStorageLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStorageLogic.swift; sourceTree = "<group>"; };
 		EE09099C2ACDA39800A8B8C5 /* ProfileStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStorageWorker.swift; sourceTree = "<group>"; };
 		EE7C30CA2AEC5130006F5C42 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EE9CD7252B378DF90064E3A1 /* TattooFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TattooFeedViewController.swift; sourceTree = "<group>"; };
+		EE9CD7272B3797E70064E3A1 /* MasterFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterFeedViewController.swift; sourceTree = "<group>"; };
 		EEB646B92AF08FCF001F2DEE /* SuisseIntl-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SuisseIntl-Bold.otf"; path = "SuisseInt/SuisseIntl-Bold.otf"; sourceTree = SOURCE_ROOT; };
 		EEB646BB2AF0933E001F2DEE /* SuisseIntl-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SuisseIntl-Medium.otf"; path = "SuisseInt/SuisseIntl-Medium.otf"; sourceTree = SOURCE_ROOT; };
 		EEB646BD2AF09357001F2DEE /* SuisseIntl-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SuisseIntl-Regular.otf"; path = "SuisseInt/SuisseIntl-Regular.otf"; sourceTree = SOURCE_ROOT; };
@@ -155,6 +159,8 @@
 			children = (
 				EE0909832ACD897600A8B8C5 /* ViewController.swift */,
 				EED34E7E2AEEE94100004D55 /* AboutUsViewController.swift */,
+				EE9CD7252B378DF90064E3A1 /* TattooFeedViewController.swift */,
+				EE9CD7272B3797E70064E3A1 /* MasterFeedViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -236,7 +242,9 @@
 				EED34E7F2AEEE94100004D55 /* AboutUsViewController.swift in Sources */,
 				EE7C30CB2AEC5130006F5C42 /* MainViewController.swift in Sources */,
 				EE0909842ACD897600A8B8C5 /* ViewController.swift in Sources */,
+				EE9CD7282B3797E70064E3A1 /* MasterFeedViewController.swift in Sources */,
 				EE09099D2ACDA39800A8B8C5 /* ProfileStorageWorker.swift in Sources */,
+				EE9CD7262B378DF90064E3A1 /* TattooFeedViewController.swift in Sources */,
 				EE0909802ACD897600A8B8C5 /* AppDelegate.swift in Sources */,
 				EE0909982ACD90E300A8B8C5 /* ProfileView.swift in Sources */,
 				EEDBE32F2AEC4AD000E24AF6 /* RootNavigationController.swift in Sources */,
