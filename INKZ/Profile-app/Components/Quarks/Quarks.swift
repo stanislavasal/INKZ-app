@@ -29,6 +29,13 @@ struct Q_ArrowButtonStyles {
     }
 }
 
+struct Q_FavoritesImage {
+    struct Sizes {
+        static let width: CGFloat = 308.0
+        static let height: CGFloat = 328.0
+    }
+}
+
 class ShortButtonView: UIView {
     
     // MARK: - Properties
@@ -260,5 +267,130 @@ class W_ArticlesCategoryPage2: BasicArticlesCategoryPage {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class BasicPopularCategoriesCard: UIView {
+
+    // MARK: - Properties
+    
+    let favoritesImage: UIImageView
+    let cardsTitleLabel: UILabel
+
+    // MARK: - Initialization
+    
+    init() {
+        favoritesImage = UIImageView()
+        cardsTitleLabel = UILabel()
+
+        super.init(frame: .zero)
+
+        setupUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Setup UI
+
+    private func setupUI() {
+        backgroundColor = UIColor.black
+        layer.cornerRadius = 22.0
+        clipsToBounds = true
+
+        addSubview(favoritesImage)
+        favoritesImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            favoritesImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22.0),
+            favoritesImage.topAnchor.constraint(equalTo: topAnchor, constant: 22.0),
+            favoritesImage.widthAnchor.constraint(equalToConstant: Q_FavoritesImage.Sizes.width),
+            favoritesImage.heightAnchor.constraint(equalToConstant: Q_FavoritesImage.Sizes.height)
+        ])
+
+        addSubview(cardsTitleLabel)
+        cardsTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            cardsTitleLabel.topAnchor.constraint(equalTo: favoritesImage.bottomAnchor, constant: 20.0),
+            cardsTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22.0),
+            cardsTitleLabel.widthAnchor.constraint(lessThanOrEqualToConstant: A_CardsTitleStyles.Restriction.textMaxWidth)
+        ])
+
+        cardsTitleLabel.font = A_CardsTitleStyles.Font.textFont
+        cardsTitleLabel.textColor = A_CardsTitleStyles.Color.textColorWhite
+        cardsTitleLabel.numberOfLines = 0
+        cardsTitleLabel.text = A_CardsTitleStyles.Text.textInscription
+
+        favoritesImage.image = UIImage(named: "")
+        favoritesImage.contentMode = .scaleAspectFit
+    }
+}
+
+class W_PopularCategoriesCardRealism: BasicPopularCategoriesCard {
+
+    // MARK: - Overrides
+    
+    override init() {
+        super.init()
+        // Additional setup for your custom class
+        customizeUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Customization
+    
+    private func customizeUI() {
+        // Customize properties specific to your subclass
+        cardsTitleLabel.text = "Реализм"
+        favoritesImage.image = UIImage(named: "Q_FavoritesImageRealism")
+    }
+}
+
+class W_PopularCategoriesCardIsrosumy: BasicPopularCategoriesCard {
+
+    // MARK: - Overrides
+    
+    override init() {
+        super.init()
+        // Additional setup for your custom class
+        customizeUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Customization
+    
+    private func customizeUI() {
+        // Customize properties specific to your subclass
+        cardsTitleLabel.text = "Ирозуми"
+        favoritesImage.image = UIImage(named: "Q_FavoritesImageRealism")
+    }
+}
+
+class W_PopularCategoriesCardOldSchool: BasicPopularCategoriesCard {
+
+    // MARK: - Overrides
+    
+    override init() {
+        super.init()
+        // Additional setup for your custom class
+        customizeUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Customization
+    
+    private func customizeUI() {
+        // Customize properties specific to your subclass
+        cardsTitleLabel.text = "Олдскул"
+        favoritesImage.image = UIImage(named: "Q_FavoritesImageRealism")
     }
 }

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
             window = UIWindow()
-            let rootViewController = MainViewController()
+            let rootViewController = SO_CategoriesFeed()
             let navigationController = RootNavigationController(rootViewController: rootViewController)
             window?.rootViewController = navigationController
 

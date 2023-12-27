@@ -23,7 +23,8 @@
 		EE26C22F2B3B51A1009CDC53 /* SuperOrganisms.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C22E2B3B51A1009CDC53 /* SuperOrganisms.swift */; };
 		EE26C2352B3B5FB0009CDC53 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C2342B3B5FB0009CDC53 /* Structures.swift */; };
 		EE26C2382B3BBBA0009CDC53 /* MastersFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C2372B3BBBA0009CDC53 /* MastersFeedViewController.swift */; };
-		EE7C30CB2AEC5130006F5C42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C30CA2AEC5130006F5C42 /* MainViewController.swift */; };
+		EE7C30CB2AEC5130006F5C42 /* CategoriesFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C30CA2AEC5130006F5C42 /* CategoriesFeedController.swift */; };
+		EE83A48C2B3C7EC400397691 /* MainPageOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83A48B2B3C7EC400397691 /* MainPageOld.swift */; };
 		EE9CD7262B378DF90064E3A1 /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9CD7252B378DF90064E3A1 /* TestController.swift */; };
 		EE9CD7282B3797E70064E3A1 /* TattooFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9CD7272B3797E70064E3A1 /* TattooFeedViewController.swift */; };
 		EEB646BA2AF08FCF001F2DEE /* SuisseIntl-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEB646B92AF08FCF001F2DEE /* SuisseIntl-Bold.otf */; };
@@ -55,7 +56,8 @@
 		EE26C22E2B3B51A1009CDC53 /* SuperOrganisms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperOrganisms.swift; sourceTree = "<group>"; };
 		EE26C2342B3B5FB0009CDC53 /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
 		EE26C2372B3BBBA0009CDC53 /* MastersFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastersFeedViewController.swift; sourceTree = "<group>"; };
-		EE7C30CA2AEC5130006F5C42 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EE7C30CA2AEC5130006F5C42 /* CategoriesFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFeedController.swift; sourceTree = "<group>"; };
+		EE83A48B2B3C7EC400397691 /* MainPageOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPageOld.swift; path = "../../../../../.Trash/INKZ/Profile-app/ViewControllers/Old/MainPageOld.swift"; sourceTree = "<group>"; };
 		EE9CD7252B378DF90064E3A1 /* TestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
 		EE9CD7272B3797E70064E3A1 /* TattooFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TattooFeedViewController.swift; sourceTree = "<group>"; };
 		EEB646B92AF08FCF001F2DEE /* SuisseIntl-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SuisseIntl-Bold.otf"; path = "SuisseInt/SuisseIntl-Bold.otf"; sourceTree = SOURCE_ROOT; };
@@ -98,6 +100,7 @@
 		EE09097E2ACD897600A8B8C5 /* Profile-app */ = {
 			isa = PBXGroup;
 			children = (
+				EE83A48D2B3C7FE100397691 /* Smth */,
 				EE26C2252B3B513F009CDC53 /* Components */,
 				EEB646B82AF08FA2001F2DEE /* Fonts */,
 				EEDBE32B2AEC423200E24AF6 /* ViewControllers */,
@@ -106,10 +109,6 @@
 				EE0909932ACD8E4F00A8B8C5 /* Models */,
 				EEC293F82AD6C74D0086D5D1 /* Extensions */,
 				EEC293FD2AD6EAD60086D5D1 /* Controllers */,
-				EE7C30CA2AEC5130006F5C42 /* MainViewController.swift */,
-				EEDBE32E2AEC4AD000E24AF6 /* RootNavigationController.swift */,
-				EE09097F2ACD897600A8B8C5 /* AppDelegate.swift */,
-				EE0909812ACD897600A8B8C5 /* SceneDelegate.swift */,
 				EE0909882ACD897600A8B8C5 /* Assets.xcassets */,
 				EE09098A2ACD897600A8B8C5 /* LaunchScreen.storyboard */,
 				EE09098D2ACD897600A8B8C5 /* Info.plist */,
@@ -176,8 +175,19 @@
 			children = (
 				EE0909832ACD897600A8B8C5 /* ViewController.swift */,
 				EED34E7E2AEEE94100004D55 /* AboutUsViewController.swift */,
+				EE83A48B2B3C7EC400397691 /* MainPageOld.swift */,
 			);
 			path = Old;
+			sourceTree = "<group>";
+		};
+		EE83A48D2B3C7FE100397691 /* Smth */ = {
+			isa = PBXGroup;
+			children = (
+				EE09097F2ACD897600A8B8C5 /* AppDelegate.swift */,
+				EE0909812ACD897600A8B8C5 /* SceneDelegate.swift */,
+				EEDBE32E2AEC4AD000E24AF6 /* RootNavigationController.swift */,
+			);
+			path = Smth;
 			sourceTree = "<group>";
 		};
 		EEB646B82AF08FA2001F2DEE /* Fonts */ = {
@@ -210,9 +220,10 @@
 		EEDBE32B2AEC423200E24AF6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EE9CD7252B378DF90064E3A1 /* TestController.swift */,
-				EE26C2372B3BBBA0009CDC53 /* MastersFeedViewController.swift */,
+				EE7C30CA2AEC5130006F5C42 /* CategoriesFeedController.swift */,
 				EE9CD7272B3797E70064E3A1 /* TattooFeedViewController.swift */,
+				EE26C2372B3BBBA0009CDC53 /* MastersFeedViewController.swift */,
+				EE9CD7252B378DF90064E3A1 /* TestController.swift */,
 				EE26C2392B3BBBD7009CDC53 /* Old */,
 			);
 			path = ViewControllers;
@@ -295,9 +306,10 @@
 				EE26C22F2B3B51A1009CDC53 /* SuperOrganisms.swift in Sources */,
 				EE09099B2ACDA29E00A8B8C5 /* ProfileStorageLogic.swift in Sources */,
 				EE26C22B2B3B5183009CDC53 /* Molecules.swift in Sources */,
+				EE83A48C2B3C7EC400397691 /* MainPageOld.swift in Sources */,
 				EE26C2292B3B5165009CDC53 /* Quarks.swift in Sources */,
 				EED34E7F2AEEE94100004D55 /* AboutUsViewController.swift in Sources */,
-				EE7C30CB2AEC5130006F5C42 /* MainViewController.swift in Sources */,
+				EE7C30CB2AEC5130006F5C42 /* CategoriesFeedController.swift in Sources */,
 				EE0909842ACD897600A8B8C5 /* ViewController.swift in Sources */,
 				EE9CD7282B3797E70064E3A1 /* TattooFeedViewController.swift in Sources */,
 				EE09099D2ACDA39800A8B8C5 /* ProfileStorageWorker.swift in Sources */,

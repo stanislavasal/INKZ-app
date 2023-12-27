@@ -28,6 +28,7 @@ struct A_MainTitleStyles {
         static let textInscriptionAllWorks = "Все работы"
         static let textInscriptionStyleLibrary = "Библиотека стилей"
         static let textInscriptionMasters = "Анкеты мастеров"
+        static let textInscriptionAllCategories = "Все категории"
     }
     
 }
