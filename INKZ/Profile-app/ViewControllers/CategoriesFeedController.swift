@@ -79,6 +79,7 @@ class SO_CategoriesFeed: UIViewController {
         return view
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -99,6 +100,15 @@ class SO_CategoriesFeed: UIViewController {
         scrollView.addSubview(allCatTitle)
         scrollView.addSubview(rightImageView)
         scrollView.addSubview(leftImageView)
+        
+        let rightTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleRightImageViewTap))
+            rightImageView.addGestureRecognizer(rightTapGesture)
+            rightImageView.isUserInteractionEnabled = true
+
+            // Add tap gesture recognizer to leftImageView for transitioning to SO_TattooFeed
+        let leftTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLeftImageViewTap))
+            leftImageView.addGestureRecognizer(leftTapGesture)
+            leftImageView.isUserInteractionEnabled = true
 
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -165,21 +175,21 @@ class SO_CategoriesFeed: UIViewController {
             favoritesCard.topAnchor.constraint(equalTo: populatTitle.bottomAnchor, constant: 10),
             favoritesCard.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             favoritesCard.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
-            favoritesCard.heightAnchor.constraint(equalToConstant: 440),
+            favoritesCard.heightAnchor.constraint(equalToConstant: 450),
         ])
         
         NSLayoutConstraint.activate([
             favoritesCard2.topAnchor.constraint(equalTo: favoritesCard.bottomAnchor, constant: 20),
             favoritesCard2.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             favoritesCard2.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
-            favoritesCard2.heightAnchor.constraint(equalToConstant: 440),
+            favoritesCard2.heightAnchor.constraint(equalToConstant: 450),
         ])
         
         NSLayoutConstraint.activate([
             favoritesCard3.topAnchor.constraint(equalTo: favoritesCard2.bottomAnchor, constant: 20),
             favoritesCard3.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             favoritesCard3.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
-            favoritesCard3.heightAnchor.constraint(equalToConstant: 440),
+            favoritesCard3.heightAnchor.constraint(equalToConstant: 450),
         ])
         
         NSLayoutConstraint.activate([
@@ -197,5 +207,17 @@ class SO_CategoriesFeed: UIViewController {
 
     @objc private func handleTap() {
         view.endEditing(true)
+    }
+    
+    @objc private func handleRightImageViewTap() {
+        // Transition to SO_MastersFeed
+        let mastersFeedViewController = SO_MastersFeed() // Assuming SO_MastersFeed is a UIViewController subclass
+        navigationController?.pushViewController(mastersFeedViewController, animated: true)
+    }
+
+    @objc private func handleLeftImageViewTap() {
+        // Transition to SO_TattooFeed
+        let tattooFeedViewController = SO_TattooFeed() // Assuming SO_TattooFeed is a UIViewController subclass
+        navigationController?.pushViewController(tattooFeedViewController, animated: true)
     }
 }

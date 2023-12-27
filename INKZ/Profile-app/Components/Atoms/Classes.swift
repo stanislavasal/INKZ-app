@@ -163,7 +163,7 @@ class W_Filter: UIView {
 
 
 
-class С_SearchAndFiltersStyles: UIView {
+class С_SearchAndFiltersMasters: UIView {
 
     let searchTextField: W_Search = {
         let textField = W_Search()
@@ -225,6 +225,70 @@ class С_SearchAndFiltersStyles: UIView {
         ])
     }
 }
+
+class С_SearchAndFiltersTattoo: UIView {
+
+    let searchTextField: W_Search = {
+        let textField = W_Search()
+        return textField
+    }()
+
+    let filterView1: W_Filter = {
+        let filter = W_Filter(text: W_FilterStyles.Text.textInscriptionStyles)
+        return filter
+    }()
+
+    let filterView2: W_Filter = {
+        let filter = W_Filter(text: W_FilterStyles.Text.textInscriptionBody)
+        return filter
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupUI()
+    }
+
+    private func setupUI() {
+        addSubview(searchTextField)
+        addSubview(filterView1)
+        addSubview(filterView2)
+
+        // Constraints for searchTextField
+        searchTextField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            searchTextField.topAnchor.constraint(equalTo: topAnchor),
+            searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            searchTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
+            searchTextField.heightAnchor.constraint(equalToConstant: A_TextFieldStyles.Sizes.height),
+            searchTextField.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor)  // Add this line
+        ])
+
+
+        // Constraints for filterView1
+        filterView1.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            filterView1.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 20),
+            filterView1.leadingAnchor.constraint(equalTo: leadingAnchor),
+            filterView1.widthAnchor.constraint(equalToConstant: W_FilterStyles.Sizes.width),
+            filterView1.heightAnchor.constraint(equalToConstant: W_FilterStyles.Sizes.height)
+        ])
+
+        // Constraints for filterView2
+        filterView2.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            filterView2.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 20),
+            filterView2.leadingAnchor.constraint(equalTo: filterView1.trailingAnchor, constant: 20), // Horizontal spacing of 20
+            filterView2.widthAnchor.constraint(equalToConstant: W_FilterStyles.Sizes.width),
+            filterView2.heightAnchor.constraint(equalToConstant: W_FilterStyles.Sizes.height)
+        ])
+    }
+}
+
 class CustomContainerView: UIView {
 
     let titleLabel: UILabel = {
@@ -414,4 +478,194 @@ class C_TitleCategoryPageAll: C_BasicTitle {
     private func setupUI() {
         titleText = A_MainTitleStyles.Text.textInscriptionStyleLibrary
     }
+}
+
+class C_TitleAllWorks: C_BasicTitle {
+
+    // Добавим свойство для установки текста
+    var titleText: String? {
+        didSet {
+            blueContainerView.titleText = A_MainTitleStyles.Text.textInscriptionAllWorks
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupUI()
+    }
+
+    private func setupUI() {
+        titleText = A_MainTitleStyles.Text.textInscriptionAllWorks
+    }
+}
+
+class BasicMasterCardData: UIView {
+    
+    // Большой текст
+    let bigTextLabel: UILabel = {
+        let label = UILabel()
+        label.font = A_BigBodyTextStyles.Font.textFont
+        label.textColor = A_BigBodyTextStyles.Color.textColorWhite
+        label.text = "Your"
+        return label
+    }()
+        
+        // Надпись на карточке
+    let cardTextLabel: UILabel = {
+            let label = UILabel()
+            label.font = A_BodyTextCardsStyles.Font.textFont
+            label.textColor = A_BodyTextCardsStyles.Color.textColorWhite
+            label.text = "Your Card Text Here"
+            return label
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupViews()
+    }
+    
+    private func setupViews() {
+        addSubview(bigTextLabel)
+        addSubview(cardTextLabel)
+        
+        bigTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        cardTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            cardTextLabel.topAnchor.constraint(equalTo: bigTextLabel.bottomAnchor, constant: -2)
+        ])
+    }
+}
+
+class W_MasterCardReviews: BasicMasterCardData {
+    override init(frame: CGRect) {
+            super.init(frame: frame)
+            setupViews()
+            
+            // Пример изменения текста в наследуемом классе
+            bigTextLabel.text = "10"
+            cardTextLabel.text = "отзывов"
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            setupViews()
+        }
+        
+        private func setupViews() {
+            // Здесь может быть дополнительная настройка вида, если необходимо
+        }
+}
+
+class W_MasterCardRating: BasicMasterCardData {
+    override init(frame: CGRect) {
+            super.init(frame: frame)
+            setupViews()
+            
+            // Пример изменения текста в наследуемом классе
+            bigTextLabel.text = "4.0"
+            cardTextLabel.text = "рейтинг"
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            setupViews()
+        }
+        
+        private func setupViews() {
+            // Здесь может быть дополнительная настройка вида, если необходимо
+        }
+}
+
+class W_MasterCardWorks: BasicMasterCardData {
+    override init(frame: CGRect) {
+            super.init(frame: frame)
+            setupViews()
+            
+            // Пример изменения текста в наследуемом классе
+            bigTextLabel.text = "23"
+            cardTextLabel.text = "тату"
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            setupViews()
+        }
+        
+        private func setupViews() {
+            // Здесь может быть дополнительная настройка вида, если необходимо
+        }
+}
+
+
+// Temporary
+
+class W_MasterCardReviews1: BasicMasterCardData {
+    override init(frame: CGRect) {
+            super.init(frame: frame)
+            setupViews()
+            
+            // Пример изменения текста в наследуемом классе
+            bigTextLabel.text = "5"
+            cardTextLabel.text = "отзывов"
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            setupViews()
+        }
+        
+        private func setupViews() {
+            // Здесь может быть дополнительная настройка вида, если необходимо
+        }
+}
+
+class W_MasterCardRating1: BasicMasterCardData {
+    override init(frame: CGRect) {
+            super.init(frame: frame)
+            setupViews()
+            
+            // Пример изменения текста в наследуемом классе
+            bigTextLabel.text = "4.3"
+            cardTextLabel.text = "рейтинг"
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            setupViews()
+        }
+        
+        private func setupViews() {
+            // Здесь может быть дополнительная настройка вида, если необходимо
+        }
+}
+
+class W_MasterCardWorks1: BasicMasterCardData {
+    override init(frame: CGRect) {
+            super.init(frame: frame)
+            setupViews()
+            
+            // Пример изменения текста в наследуемом классе
+            bigTextLabel.text = "13"
+            cardTextLabel.text = "тату"
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            setupViews()
+        }
+        
+        private func setupViews() {
+            // Здесь может быть дополнительная настройка вида, если необходимо
+        }
 }

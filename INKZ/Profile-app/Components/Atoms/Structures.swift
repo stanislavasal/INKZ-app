@@ -146,6 +146,19 @@ struct A_BigBodyTextStyles {
     
 }
 
+struct A_BodyTextCardsStyles {
+    
+    struct Font {
+        static let textFont = UIFont(name: "SuisseRegular", size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
+    }
+    
+    struct Color {
+        static let textColorWhite = UIColor.white
+        static let textColorBlack = UIColor.black
+    }
+    
+}
+
 struct A_BodyTextStyles {
     
     struct Font {
@@ -162,7 +175,7 @@ struct A_BodyTextStyles {
     struct Text {
         static let textInscription = "test" // API
         static let textArticle1 = "Как не пожалеть о первой тату?"
-        static let textArticle2 = "Быстрый гайд по тату-стилям" 
+        static let textArticle2 = "Быстрый гайд по тату-стилям"
     }
     
 }
@@ -202,6 +215,7 @@ struct W_FilterStyles {
     struct Text {
         static let textInscriptionStyles = "Стили"
         static let textInscriptionCities = "Города"
+        static let textInscriptionBody = "Часть тела"
     }
 }
 

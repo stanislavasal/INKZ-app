@@ -8,9 +8,15 @@
 import UIKit
 
 class SO_MastersFeed: UIViewController {
+    
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
 
-    let searchAndFilters: С_SearchAndFiltersStyles = {
-        let view = С_SearchAndFiltersStyles()
+    let searchAndFilters: С_SearchAndFiltersMasters = {
+        let view = С_SearchAndFiltersMasters()
         return view
     }()
 
@@ -31,33 +37,51 @@ class SO_MastersFeed: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    let masterCard: C_MasterCard = {
+        let view = C_MasterCard()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let masterCard1: C_TemporaryMasterCard = {
+        let view = C_TemporaryMasterCard()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     private func setupUI() {
         view.backgroundColor = .white
-        view.addSubview(searchAndFilters)
-        view.addSubview(customContainerView)
-        view.addSubview(rightImageView)
-        view.addSubview(leftImageView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(searchAndFilters)
+        scrollView.addSubview(customContainerView)
+        scrollView.addSubview(masterCard)
+        scrollView.addSubview(masterCard1)
+        scrollView.addSubview(rightImageView)
+        scrollView.addSubview(leftImageView)
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
 
         searchAndFilters.translatesAutoresizingMaskIntoConstraints = false
         customContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            customContainerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 105),
-            customContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            customContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-        ])
-
-        NSLayoutConstraint.activate([
-            searchAndFilters.topAnchor.constraint(equalTo: customContainerView.bottomAnchor, constant: 90),
-            searchAndFilters.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            searchAndFilters.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            searchAndFilters.heightAnchor.constraint(equalToConstant: 120),
+            customContainerView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 115),
+            customContainerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            customContainerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            customContainerView.heightAnchor.constraint(equalToConstant: 80),
+            customContainerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
         ])
 
         NSLayoutConstraint.activate([
@@ -72,6 +96,32 @@ class SO_MastersFeed: UIViewController {
             leftImageView.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -20),
             leftImageView.widthAnchor.constraint(equalToConstant: 50),
             leftImageView.heightAnchor.constraint(equalToConstant: 50),
+        ])
+        
+        NSLayoutConstraint.activate([
+            searchAndFilters.topAnchor.constraint(equalTo: customContainerView.bottomAnchor, constant: 10),
+            searchAndFilters.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            searchAndFilters.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            searchAndFilters.heightAnchor.constraint(equalToConstant: 120),
+        ])
+        
+        NSLayoutConstraint.activate([
+            masterCard.topAnchor.constraint(equalTo: searchAndFilters.bottomAnchor, constant: 20),
+            masterCard.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            masterCard.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            masterCard.heightAnchor.constraint(equalToConstant: 281),
+            masterCard.widthAnchor.constraint(equalToConstant: 281),
+        ])
+        
+        // Temporary
+        
+        NSLayoutConstraint.activate([
+            masterCard1.topAnchor.constraint(equalTo: masterCard.bottomAnchor, constant: 20),
+            masterCard1.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            masterCard1.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            masterCard1.heightAnchor.constraint(equalToConstant: 281),
+            masterCard1.widthAnchor.constraint(equalToConstant: 281),
+            masterCard1.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
         ])
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
