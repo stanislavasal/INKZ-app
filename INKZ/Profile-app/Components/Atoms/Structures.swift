@@ -64,9 +64,13 @@ struct A_ButtonStyles {
     }
     struct Sizes {
         static let widthLong: CGFloat = 350.0
-        static let widthShort: CGFloat = 290.0
+        static let widthShort: CGFloat = 310.0
         static let height: CGFloat = 50.0
         static let fontSize: CGFloat = 18.0
+    }
+    struct Color {
+        static let textColorWhite = UIColor.white
+        static let textColorBlack = UIColor.black
     }
 }
 
