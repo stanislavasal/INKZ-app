@@ -61,6 +61,12 @@ class SO_TattooFeed: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    let menu: OvalImageView = {
+        let view = OvalImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +85,7 @@ class SO_TattooFeed: UIViewController {
         scrollView.addSubview(allWorksTitle)
         scrollView.addSubview(rightImageView)
         scrollView.addSubview(leftImageView)
+        scrollView.addSubview(menu)
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -91,7 +98,7 @@ class SO_TattooFeed: UIViewController {
         populatTitle.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            populatTitle.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 115),
+            populatTitle.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 105),
             populatTitle.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             populatTitle.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
             populatTitle.heightAnchor.constraint(equalToConstant: 80),
@@ -110,6 +117,13 @@ class SO_TattooFeed: UIViewController {
             leftImageView.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -20),
             leftImageView.widthAnchor.constraint(equalToConstant: 50),
             leftImageView.heightAnchor.constraint(equalToConstant: 50),
+        ])
+        
+        NSLayoutConstraint.activate([
+            menu.centerXAnchor.constraint(equalTo: view.centerXAnchor), // Центрирование по горизонтали
+            menu.topAnchor.constraint(equalTo: view.topAnchor, constant: 710), // Отступ от верхней границы
+            menu.widthAnchor.constraint(equalToConstant: 290),
+            menu.heightAnchor.constraint(equalToConstant: 65),
         ])
         
         NSLayoutConstraint.activate([

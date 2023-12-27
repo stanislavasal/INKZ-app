@@ -49,6 +49,12 @@ class SO_MastersFeed: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    let menu: OvalImageView = {
+        let view = OvalImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +71,7 @@ class SO_MastersFeed: UIViewController {
         scrollView.addSubview(masterCard1)
         scrollView.addSubview(rightImageView)
         scrollView.addSubview(leftImageView)
+        scrollView.addSubview(menu)
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -77,7 +84,7 @@ class SO_MastersFeed: UIViewController {
         customContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            customContainerView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 115),
+            customContainerView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 105),
             customContainerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             customContainerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
             customContainerView.heightAnchor.constraint(equalToConstant: 80),
@@ -96,6 +103,13 @@ class SO_MastersFeed: UIViewController {
             leftImageView.trailingAnchor.constraint(equalTo: rightImageView.leadingAnchor, constant: -20),
             leftImageView.widthAnchor.constraint(equalToConstant: 50),
             leftImageView.heightAnchor.constraint(equalToConstant: 50),
+        ])
+        
+        NSLayoutConstraint.activate([
+            menu.centerXAnchor.constraint(equalTo: view.centerXAnchor), // Центрирование по горизонтали
+            menu.topAnchor.constraint(equalTo: view.topAnchor, constant: 710), // Отступ от верхней границы
+            menu.widthAnchor.constraint(equalToConstant: 290),
+            menu.heightAnchor.constraint(equalToConstant: 65),
         ])
         
         NSLayoutConstraint.activate([

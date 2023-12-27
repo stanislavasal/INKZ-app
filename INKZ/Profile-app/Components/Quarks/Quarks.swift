@@ -59,6 +59,36 @@ struct Q_MasterWorksImage {
     static let height: CGFloat = 170.0
 }
 
+
+struct Q_MenuImage1 {
+    struct Sizes {
+        static let width: CGFloat = 25.0
+        static let height: CGFloat = 25.0
+    }
+}
+
+struct Q_MenuImage2 {
+    struct Sizes {
+        static let width: CGFloat = 22.0
+        static let height: CGFloat = 23.0
+    }
+}
+
+struct Q_MenuImage3 {
+    struct Sizes {
+        static let width: CGFloat = 32.0
+        static let height: CGFloat = 24.0
+    }
+}
+
+struct Q_MenuImage4 {
+    struct Sizes {
+        static let width: CGFloat = 30.0
+        static let height: CGFloat = 30.0
+    }
+}
+
+
 class ShortButtonView: UIView {
     
     // MARK: - Properties
