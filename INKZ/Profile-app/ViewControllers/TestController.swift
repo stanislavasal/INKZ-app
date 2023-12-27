@@ -22,7 +22,7 @@ class SO_MasterFeed: UIViewController {
     }()
 
     let leftImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "Q_FavouritesIcon"))
+        let imageView = UIImageView(image: UIImage(named: "Q_ProfileIcon"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
