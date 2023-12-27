@@ -669,7 +669,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Change!
     
     @objc func openAboutUsViewController() {
-            let aboutUsViewController = TattooFeedViewController()
+            let aboutUsViewController = SO_MasterFeed()
             navigationController?.pushViewController(aboutUsViewController, animated: true)
 
         }

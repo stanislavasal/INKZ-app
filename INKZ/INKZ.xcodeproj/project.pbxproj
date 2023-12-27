@@ -16,9 +16,16 @@
 		EE0909982ACD90E300A8B8C5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0909972ACD90E300A8B8C5 /* ProfileView.swift */; };
 		EE09099B2ACDA29E00A8B8C5 /* ProfileStorageLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09099A2ACDA29E00A8B8C5 /* ProfileStorageLogic.swift */; };
 		EE09099D2ACDA39800A8B8C5 /* ProfileStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09099C2ACDA39800A8B8C5 /* ProfileStorageWorker.swift */; };
+		EE26C2272B3B5157009CDC53 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C2262B3B5157009CDC53 /* Classes.swift */; };
+		EE26C2292B3B5165009CDC53 /* Quarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C2282B3B5165009CDC53 /* Quarks.swift */; };
+		EE26C22B2B3B5183009CDC53 /* Molecules.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C22A2B3B5183009CDC53 /* Molecules.swift */; };
+		EE26C22D2B3B5190009CDC53 /* Organisms.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C22C2B3B5190009CDC53 /* Organisms.swift */; };
+		EE26C22F2B3B51A1009CDC53 /* SuperOrganisms.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C22E2B3B51A1009CDC53 /* SuperOrganisms.swift */; };
+		EE26C2352B3B5FB0009CDC53 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C2342B3B5FB0009CDC53 /* Structures.swift */; };
+		EE26C2382B3BBBA0009CDC53 /* MastersFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C2372B3BBBA0009CDC53 /* MastersFeedViewController.swift */; };
 		EE7C30CB2AEC5130006F5C42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C30CA2AEC5130006F5C42 /* MainViewController.swift */; };
-		EE9CD7262B378DF90064E3A1 /* TattooFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9CD7252B378DF90064E3A1 /* TattooFeedViewController.swift */; };
-		EE9CD7282B3797E70064E3A1 /* MasterFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9CD7272B3797E70064E3A1 /* MasterFeedViewController.swift */; };
+		EE9CD7262B378DF90064E3A1 /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9CD7252B378DF90064E3A1 /* TestController.swift */; };
+		EE9CD7282B3797E70064E3A1 /* TattooFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9CD7272B3797E70064E3A1 /* TattooFeedViewController.swift */; };
 		EEB646BA2AF08FCF001F2DEE /* SuisseIntl-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEB646B92AF08FCF001F2DEE /* SuisseIntl-Bold.otf */; };
 		EEB646BC2AF0933E001F2DEE /* SuisseIntl-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEB646BB2AF0933E001F2DEE /* SuisseIntl-Medium.otf */; };
 		EEB646BE2AF09357001F2DEE /* SuisseIntl-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEB646BD2AF09357001F2DEE /* SuisseIntl-Regular.otf */; };
@@ -41,9 +48,16 @@
 		EE0909972ACD90E300A8B8C5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EE09099A2ACDA29E00A8B8C5 /* ProfileStorageLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStorageLogic.swift; sourceTree = "<group>"; };
 		EE09099C2ACDA39800A8B8C5 /* ProfileStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStorageWorker.swift; sourceTree = "<group>"; };
+		EE26C2262B3B5157009CDC53 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
+		EE26C2282B3B5165009CDC53 /* Quarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quarks.swift; sourceTree = "<group>"; };
+		EE26C22A2B3B5183009CDC53 /* Molecules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Molecules.swift; sourceTree = "<group>"; };
+		EE26C22C2B3B5190009CDC53 /* Organisms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organisms.swift; sourceTree = "<group>"; };
+		EE26C22E2B3B51A1009CDC53 /* SuperOrganisms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperOrganisms.swift; sourceTree = "<group>"; };
+		EE26C2342B3B5FB0009CDC53 /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
+		EE26C2372B3BBBA0009CDC53 /* MastersFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastersFeedViewController.swift; sourceTree = "<group>"; };
 		EE7C30CA2AEC5130006F5C42 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		EE9CD7252B378DF90064E3A1 /* TattooFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TattooFeedViewController.swift; sourceTree = "<group>"; };
-		EE9CD7272B3797E70064E3A1 /* MasterFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterFeedViewController.swift; sourceTree = "<group>"; };
+		EE9CD7252B378DF90064E3A1 /* TestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
+		EE9CD7272B3797E70064E3A1 /* TattooFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TattooFeedViewController.swift; sourceTree = "<group>"; };
 		EEB646B92AF08FCF001F2DEE /* SuisseIntl-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SuisseIntl-Bold.otf"; path = "SuisseInt/SuisseIntl-Bold.otf"; sourceTree = SOURCE_ROOT; };
 		EEB646BB2AF0933E001F2DEE /* SuisseIntl-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SuisseIntl-Medium.otf"; path = "SuisseInt/SuisseIntl-Medium.otf"; sourceTree = SOURCE_ROOT; };
 		EEB646BD2AF09357001F2DEE /* SuisseIntl-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SuisseIntl-Regular.otf"; path = "SuisseInt/SuisseIntl-Regular.otf"; sourceTree = SOURCE_ROOT; };
@@ -84,6 +98,7 @@
 		EE09097E2ACD897600A8B8C5 /* Profile-app */ = {
 			isa = PBXGroup;
 			children = (
+				EE26C2252B3B513F009CDC53 /* Components */,
 				EEB646B82AF08FA2001F2DEE /* Fonts */,
 				EEDBE32B2AEC423200E24AF6 /* ViewControllers */,
 				EE0909992ACDA26B00A8B8C5 /* ProfileStorage */,
@@ -127,6 +142,44 @@
 			path = ProfileStorage;
 			sourceTree = "<group>";
 		};
+		EE26C2252B3B513F009CDC53 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EE26C2362B3B7983009CDC53 /* Quarks */,
+				EE26C2332B3B5F96009CDC53 /* Atoms */,
+				EE26C22A2B3B5183009CDC53 /* Molecules.swift */,
+				EE26C22C2B3B5190009CDC53 /* Organisms.swift */,
+				EE26C22E2B3B51A1009CDC53 /* SuperOrganisms.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EE26C2332B3B5F96009CDC53 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				EE26C2342B3B5FB0009CDC53 /* Structures.swift */,
+				EE26C2262B3B5157009CDC53 /* Classes.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		EE26C2362B3B7983009CDC53 /* Quarks */ = {
+			isa = PBXGroup;
+			children = (
+				EE26C2282B3B5165009CDC53 /* Quarks.swift */,
+			);
+			path = Quarks;
+			sourceTree = "<group>";
+		};
+		EE26C2392B3BBBD7009CDC53 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				EE0909832ACD897600A8B8C5 /* ViewController.swift */,
+				EED34E7E2AEEE94100004D55 /* AboutUsViewController.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
 		EEB646B82AF08FA2001F2DEE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,10 +210,10 @@
 		EEDBE32B2AEC423200E24AF6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EE0909832ACD897600A8B8C5 /* ViewController.swift */,
-				EED34E7E2AEEE94100004D55 /* AboutUsViewController.swift */,
-				EE9CD7252B378DF90064E3A1 /* TattooFeedViewController.swift */,
-				EE9CD7272B3797E70064E3A1 /* MasterFeedViewController.swift */,
+				EE9CD7252B378DF90064E3A1 /* TestController.swift */,
+				EE26C2372B3BBBA0009CDC53 /* MastersFeedViewController.swift */,
+				EE9CD7272B3797E70064E3A1 /* TattooFeedViewController.swift */,
+				EE26C2392B3BBBD7009CDC53 /* Old */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -238,20 +291,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE26C22D2B3B5190009CDC53 /* Organisms.swift in Sources */,
+				EE26C22F2B3B51A1009CDC53 /* SuperOrganisms.swift in Sources */,
 				EE09099B2ACDA29E00A8B8C5 /* ProfileStorageLogic.swift in Sources */,
+				EE26C22B2B3B5183009CDC53 /* Molecules.swift in Sources */,
+				EE26C2292B3B5165009CDC53 /* Quarks.swift in Sources */,
 				EED34E7F2AEEE94100004D55 /* AboutUsViewController.swift in Sources */,
 				EE7C30CB2AEC5130006F5C42 /* MainViewController.swift in Sources */,
 				EE0909842ACD897600A8B8C5 /* ViewController.swift in Sources */,
-				EE9CD7282B3797E70064E3A1 /* MasterFeedViewController.swift in Sources */,
+				EE9CD7282B3797E70064E3A1 /* TattooFeedViewController.swift in Sources */,
 				EE09099D2ACDA39800A8B8C5 /* ProfileStorageWorker.swift in Sources */,
-				EE9CD7262B378DF90064E3A1 /* TattooFeedViewController.swift in Sources */,
+				EE26C2352B3B5FB0009CDC53 /* Structures.swift in Sources */,
+				EE9CD7262B378DF90064E3A1 /* TestController.swift in Sources */,
 				EE0909802ACD897600A8B8C5 /* AppDelegate.swift in Sources */,
 				EE0909982ACD90E300A8B8C5 /* ProfileView.swift in Sources */,
 				EEDBE32F2AEC4AD000E24AF6 /* RootNavigationController.swift in Sources */,
+				EE26C2272B3B5157009CDC53 /* Classes.swift in Sources */,
 				EEC293FC2AD6E8BB0086D5D1 /* UIImage + String.swift in Sources */,
 				EE0909822ACD897600A8B8C5 /* SceneDelegate.swift in Sources */,
 				EEC293FF2AD6EB2D0086D5D1 /* ImagePickerController.swift in Sources */,
 				EEC293FA2AD6C77F0086D5D1 /* UIView+Pin.swift in Sources */,
+				EE26C2382B3BBBA0009CDC53 /* MastersFeedViewController.swift in Sources */,
 				EE0909952ACD8EA700A8B8C5 /* ProfileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
