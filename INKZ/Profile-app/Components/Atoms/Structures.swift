@@ -65,6 +65,7 @@ struct A_ButtonStyles {
     struct Sizes {
         static let widthLong: CGFloat = 350.0
         static let widthShort: CGFloat = 310.0
+        static let widthShortest: CGFloat = 150.0
         static let height: CGFloat = 50.0
         static let fontSize: CGFloat = 18.0
     }
@@ -147,7 +148,7 @@ struct A_BigBodyTextStyles {
 struct A_BodyTextStyles {
     
     struct Font {
-        static let textFont = UIFont(name: "SuisseRegular", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0)
+        static let textFont = UIFont(name: "SuisseRegular", size: 18.0) ?? UIFont.systemFont(ofSize: 18.0)
     }
     
     struct Color {
@@ -159,6 +160,8 @@ struct A_BodyTextStyles {
     
     struct Text {
         static let textInscription = "test" // API
+        static let textArticle1 = "Как не пожалеть о первой тату?"
+        static let textArticle2 = "Быстрый гайд по тату-стилям" 
     }
     
 }

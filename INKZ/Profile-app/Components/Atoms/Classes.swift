@@ -367,3 +367,27 @@ class C_TitleCategoryPageLibrary: C_BasicTitle {
         titleText = A_MainTitleStyles.Text.textInscriptionStyleLibrary
     }
 }
+
+class C_TitleCategoryPagePopular: C_BasicTitle {
+
+    // Добавим свойство для установки текста
+    var titleText: String? {
+        didSet {
+            blueContainerView.titleText = A_MainTitleStyles.Text.textInscriptionPopular
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupUI()
+    }
+
+    private func setupUI() {
+        titleText = A_MainTitleStyles.Text.textInscriptionStyleLibrary
+    }
+}

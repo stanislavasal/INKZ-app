@@ -38,7 +38,22 @@ class SO_MasterFeed: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
+    let articlesCategoryPage1: W_ArticlesCategoryPage1 = {
+            let view = W_ArticlesCategoryPage1()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
+    let articlesCategoryPage2: W_ArticlesCategoryPage2 = {
+            let view = W_ArticlesCategoryPage2()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
+    let populatTitle: C_TitleCategoryPagePopular = {
+        let view = C_TitleCategoryPagePopular()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -48,9 +63,12 @@ class SO_MasterFeed: UIViewController {
         view.backgroundColor = .white
         view.addSubview(scrollView)
         scrollView.addSubview(customContainerView)
+        scrollView.addSubview(customCardView)
+        scrollView.addSubview(articlesCategoryPage1)
+        scrollView.addSubview(articlesCategoryPage2)
+        scrollView.addSubview(populatTitle)
         scrollView.addSubview(rightImageView)
         scrollView.addSubview(leftImageView)
-        scrollView.addSubview(customCardView)
 
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -66,8 +84,6 @@ class SO_MasterFeed: UIViewController {
             customContainerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             customContainerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
             customContainerView.heightAnchor.constraint(equalToConstant: 80),
-            
-            // Добавляем ограничения к центру scrollView
             customContainerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
         ])
 
@@ -87,11 +103,33 @@ class SO_MasterFeed: UIViewController {
         ])
 
         NSLayoutConstraint.activate([
-            customCardView.topAnchor.constraint(equalTo: customContainerView.bottomAnchor, constant: 150),
+            customCardView.topAnchor.constraint(equalTo: customContainerView.bottomAnchor, constant: 10),
             customCardView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
             customCardView.widthAnchor.constraint(equalToConstant: 350),
             customCardView.heightAnchor.constraint(equalToConstant: 485),
-            customCardView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            articlesCategoryPage1.topAnchor.constraint(equalTo: customCardView.bottomAnchor, constant: 155),
+            articlesCategoryPage1.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            articlesCategoryPage1.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            articlesCategoryPage1.heightAnchor.constraint(equalToConstant: 189),
+        ])
+        
+        NSLayoutConstraint.activate([
+            articlesCategoryPage2.topAnchor.constraint(equalTo: articlesCategoryPage1.bottomAnchor, constant: 20),
+            articlesCategoryPage2.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            articlesCategoryPage2.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            articlesCategoryPage2.heightAnchor.constraint(equalToConstant: 189),
+        ])
+        
+        NSLayoutConstraint.activate([
+            populatTitle.topAnchor.constraint(equalTo: articlesCategoryPage2.topAnchor, constant: 105),
+            populatTitle.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            populatTitle.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            populatTitle.heightAnchor.constraint(equalToConstant: 80),
+            populatTitle.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            populatTitle.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20)
         ])
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))

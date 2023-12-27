@@ -131,64 +131,133 @@ class W_SeeAllWorksCard: UIView {
     }
 }
 
-class W_ArticlesCategoryPage: UIView {
-
-    // Большая картинка
-    let bigImageView: UIImageView = {
+class BasicArticlesCategoryPage: UIView {
+    let greenContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black // Change background color to black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 20 // Add rounded corners
+        return view
+    }()
+    
+    let articleImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = UIColor.green
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = Q_ArticleImageStyles.Sizes.cornerRadius
+        imageView.clipsToBounds = true
         return imageView
     }()
-
-    // Текст
-    let textLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = A_ButtonStyles.Color.textColorWhite
-        label.font = UIFont.systemFont(ofSize: A_ButtonStyles.Sizes.fontSize)
-        label.textAlignment = .right
-        return label
+    
+    let arrowButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "Q_ArrowButton"), for: .normal)
+        button.contentMode = .scaleAspectFit
+        return button
     }()
-
-    // Маленькая картинка
-    let smallImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = UIColor.green
-        imageView.layer.cornerRadius = Q_ArticleImageStyles.Sizes.cornerRadius
-        return imageView
-    }()
-
+    
+//    let bodyTextLabel: UILabel = {
+//        let label = UILabel()
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.font = A_BodyTextStyles.Font.textFont
+//        label.textColor = A_BodyTextStyles.Color.textColorWhite
+//        label.numberOfLines = 0 // Allow multiple lines
+//        label.lineBreakMode = .byWordWrapping // Enable word wrapping
+//        return label
+//    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        // Устанавливаем фон
-        backgroundColor = UIColor.green
-
-        // Добавляем элементы на экран
-        addSubview(bigImageView)
-        addSubview(textLabel)
-        addSubview(smallImageView)
-
-        // Устанавливаем constraints
-        NSLayoutConstraint.activate([
-            bigImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            bigImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            bigImageView.widthAnchor.constraint(equalToConstant: Q_ArticleImageStyles.Sizes.width),
-            bigImageView.heightAnchor.constraint(equalToConstant: Q_ArticleImageStyles.Sizes.height),
-
-            textLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            textLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-
-            smallImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            smallImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            smallImageView.widthAnchor.constraint(equalToConstant: Q_ArticleImageStyles.Sizes.width),
-            smallImageView.heightAnchor.constraint(equalToConstant: Q_ArticleImageStyles.Sizes.height)
-        ])
+        
+        addSubview(greenContainerView)
+        greenContainerView.widthAnchor.constraint(equalToConstant: 350).isActive = true
+        greenContainerView.heightAnchor.constraint(equalToConstant: 189).isActive = true
+        
+        greenContainerView.addSubview(articleImageView)
+        articleImageView.topAnchor.constraint(equalTo: greenContainerView.topAnchor, constant: 20).isActive = true
+        articleImageView.leadingAnchor.constraint(equalTo: greenContainerView.leadingAnchor, constant: 20).isActive = true
+        articleImageView.widthAnchor.constraint(equalToConstant: Q_ArticleImageStyles.Sizes.width).isActive = true
+        articleImageView.heightAnchor.constraint(equalToConstant: Q_ArticleImageStyles.Sizes.height).isActive = true
+        
+        addSubview(arrowButton)
+        arrowButton.bottomAnchor.constraint(equalTo: greenContainerView.bottomAnchor, constant: -20).isActive = true
+        arrowButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        arrowButton.widthAnchor.constraint(equalToConstant: Q_ArrowButtonStyles.Sizes.width).isActive = true
+        arrowButton.heightAnchor.constraint(equalToConstant: Q_ArrowButtonStyles.Sizes.height).isActive = true
+        
+//        addSubview(bodyTextLabel)
+//        bodyTextLabel.topAnchor.constraint(equalTo: greenContainerView.topAnchor, constant: 20).isActive = true
+//        bodyTextLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+//        bodyTextLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
+class W_ArticlesCategoryPage1: BasicArticlesCategoryPage {
+
+    let bodyTextLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = A_BodyTextStyles.Font.textFont
+        label.textColor = A_BodyTextStyles.Color.textColorWhite
+        label.text = A_BodyTextStyles.Text.textArticle1
+        label.numberOfLines = 0 // Allow multiple lines
+        label.lineBreakMode = .byWordWrapping // Enable word wrapping
+        return label
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        if let image = UIImage(named: "Q_ArticleImage") {
+            articleImageView.image = image
+        } else {
+            // Handle the case when the image is not found
+            print("Image not found in assets")
+        }
+        addSubview(bodyTextLabel)
+        bodyTextLabel.topAnchor.constraint(equalTo: greenContainerView.topAnchor, constant: 20).isActive = true
+        bodyTextLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        bodyTextLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 150).isActive = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class W_ArticlesCategoryPage2: BasicArticlesCategoryPage {
+
+    let bodyTextLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = A_BodyTextStyles.Font.textFont
+        label.textColor = A_BodyTextStyles.Color.textColorWhite
+        label.text = A_BodyTextStyles.Text.textArticle2
+        label.numberOfLines = 0 // Allow multiple lines
+        label.lineBreakMode = .byWordWrapping // Enable word wrapping
+        return label
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        if let image = UIImage(named: "Q_ArticleImage") {
+            articleImageView.image = image
+        } else {
+            // Handle the case when the image is not found
+            print("Image not found in assets")
+        }
+        addSubview(bodyTextLabel)
+        bodyTextLabel.topAnchor.constraint(equalTo: greenContainerView.topAnchor, constant: 20).isActive = true
+        bodyTextLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        bodyTextLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 130).isActive = true
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
