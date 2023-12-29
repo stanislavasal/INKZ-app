@@ -97,13 +97,9 @@ class W_Search: UITextField {
 
 extension W_Search: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        // Метод вызывается при начале редактирования текстового поля (когда появляется клавиатура)
-        // Можно добавить дополнительную логику при появлении клавиатуры
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        // Метод вызывается при завершении редактирования текстового поля (когда клавиатура скрывается)
-        // Можно добавить дополнительную логику при скрытии клавиатуры
     }
 }
 
@@ -300,7 +296,6 @@ class CustomContainerView: UIView {
         return label
     }()
 
-    // Добавим свойство для установки текста
     var titleText: String? {
         didSet {
             titleLabel.text = titleText
@@ -329,7 +324,6 @@ class CustomContainerView: UIView {
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15)
         ])
 
-        // Устанавливаем текст при инициализации
         titleText = A_MainTitleStyles.Text.textInscriptionMasters
     }
 }
@@ -363,19 +357,15 @@ class C_BasicTitle: UIView {
     }
 
     private func setupUI() {
-        // Добавляем зеленый блок на слой
         addSubview(greenContainerView)
 
-        // Добавляем синий блок
         addSubview(blueContainerView)
 
-        // Устанавливаем констрейнты для синего блока
         NSLayoutConstraint.activate([
             blueContainerView.centerXAnchor.constraint(equalTo: centerXAnchor),
             blueContainerView.centerYAnchor.constraint(equalTo: topAnchor),
         ])
 
-        // Устанавливаем констрейнты для зеленого блока
         NSLayoutConstraint.activate([
             greenContainerView.widthAnchor.constraint(equalToConstant: 350),
             greenContainerView.heightAnchor.constraint(equalToConstant: 70),
@@ -410,7 +400,6 @@ class CustomContainerWithBorderView: C_BasicTitle {
 
 class C_TitleCategoryPageLibrary: C_BasicTitle {
 
-    // Добавим свойство для установки текста
     var titleText: String? {
         didSet {
             blueContainerView.titleText = A_MainTitleStyles.Text.textInscriptionStyleLibrary
@@ -434,7 +423,6 @@ class C_TitleCategoryPageLibrary: C_BasicTitle {
 
 class C_TitleCategoryPagePopular: C_BasicTitle {
 
-    // Добавим свойство для установки текста
     var titleText: String? {
         didSet {
             blueContainerView.titleText = A_MainTitleStyles.Text.textInscriptionPopular
@@ -458,7 +446,6 @@ class C_TitleCategoryPagePopular: C_BasicTitle {
 
 class C_TitleCategoryPageAll: C_BasicTitle {
 
-    // Добавим свойство для установки текста
     var titleText: String? {
         didSet {
             blueContainerView.titleText = A_MainTitleStyles.Text.textInscriptionAllCategories
@@ -481,8 +468,7 @@ class C_TitleCategoryPageAll: C_BasicTitle {
 }
 
 class C_TitleAllWorks: C_BasicTitle {
-
-    // Добавим свойство для установки текста
+    
     var titleText: String? {
         didSet {
             blueContainerView.titleText = A_MainTitleStyles.Text.textInscriptionAllWorks
@@ -551,8 +537,6 @@ class W_MasterCardReviews: BasicMasterCardData {
     override init(frame: CGRect) {
             super.init(frame: frame)
             setupViews()
-            
-            // Пример изменения текста в наследуемом классе
             bigTextLabel.text = "10"
             cardTextLabel.text = "отзывов"
         }
@@ -563,7 +547,6 @@ class W_MasterCardReviews: BasicMasterCardData {
         }
         
         private func setupViews() {
-            // Здесь может быть дополнительная настройка вида, если необходимо
         }
 }
 
@@ -571,8 +554,6 @@ class W_MasterCardRating: BasicMasterCardData {
     override init(frame: CGRect) {
             super.init(frame: frame)
             setupViews()
-            
-            // Пример изменения текста в наследуемом классе
             bigTextLabel.text = "4.0"
             cardTextLabel.text = "рейтинг"
         }
@@ -583,7 +564,6 @@ class W_MasterCardRating: BasicMasterCardData {
         }
         
         private func setupViews() {
-            // Здесь может быть дополнительная настройка вида, если необходимо
         }
 }
 
@@ -591,8 +571,6 @@ class W_MasterCardWorks: BasicMasterCardData {
     override init(frame: CGRect) {
             super.init(frame: frame)
             setupViews()
-            
-            // Пример изменения текста в наследуемом классе
             bigTextLabel.text = "23"
             cardTextLabel.text = "тату"
         }
@@ -603,7 +581,6 @@ class W_MasterCardWorks: BasicMasterCardData {
         }
         
         private func setupViews() {
-            // Здесь может быть дополнительная настройка вида, если необходимо
         }
 }
 
@@ -614,8 +591,6 @@ class W_MasterCardReviews1: BasicMasterCardData {
     override init(frame: CGRect) {
             super.init(frame: frame)
             setupViews()
-            
-            // Пример изменения текста в наследуемом классе
             bigTextLabel.text = "5"
             cardTextLabel.text = "отзывов"
         }
@@ -626,7 +601,6 @@ class W_MasterCardReviews1: BasicMasterCardData {
         }
         
         private func setupViews() {
-            // Здесь может быть дополнительная настройка вида, если необходимо
         }
 }
 
@@ -634,8 +608,6 @@ class W_MasterCardRating1: BasicMasterCardData {
     override init(frame: CGRect) {
             super.init(frame: frame)
             setupViews()
-            
-            // Пример изменения текста в наследуемом классе
             bigTextLabel.text = "4.3"
             cardTextLabel.text = "рейтинг"
         }
@@ -646,7 +618,6 @@ class W_MasterCardRating1: BasicMasterCardData {
         }
         
         private func setupViews() {
-            // Здесь может быть дополнительная настройка вида, если необходимо
         }
 }
 
@@ -654,8 +625,6 @@ class W_MasterCardWorks1: BasicMasterCardData {
     override init(frame: CGRect) {
             super.init(frame: frame)
             setupViews()
-            
-            // Пример изменения текста в наследуемом классе
             bigTextLabel.text = "13"
             cardTextLabel.text = "тату"
         }
@@ -666,6 +635,5 @@ class W_MasterCardWorks1: BasicMasterCardData {
         }
         
         private func setupViews() {
-            // Здесь может быть дополнительная настройка вида, если необходимо
         }
 }

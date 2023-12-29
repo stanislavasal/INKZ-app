@@ -276,7 +276,6 @@ class W_ArticlesCategoryPage1: BasicArticlesCategoryPage {
         if let image = UIImage(named: "Q_ArticleImage") {
             articleImageView.image = image
         } else {
-            // Handle the case when the image is not found
             print("Image not found in assets")
         }
         addSubview(bodyTextLabel)
@@ -410,7 +409,6 @@ class W_PopularCategoriesCardIsrosumy: BasicPopularCategoriesCard {
     
     override init() {
         super.init()
-        // Additional setup for your custom class
         customizeUI()
     }
 
@@ -421,7 +419,6 @@ class W_PopularCategoriesCardIsrosumy: BasicPopularCategoriesCard {
     // MARK: - Customization
     
     private func customizeUI() {
-        // Customize properties specific to your subclass
         cardsTitleLabel.text = "Ирозуми"
         favoritesImage.image = UIImage(named: "Q_FavoritesImageRealism")
     }
@@ -433,7 +430,6 @@ class W_PopularCategoriesCardOldSchool: BasicPopularCategoriesCard {
     
     override init() {
         super.init()
-        // Additional setup for your custom class
         customizeUI()
     }
 
@@ -444,7 +440,6 @@ class W_PopularCategoriesCardOldSchool: BasicPopularCategoriesCard {
     // MARK: - Customization
     
     private func customizeUI() {
-        // Customize properties specific to your subclass
         cardsTitleLabel.text = "Олдскул"
         favoritesImage.image = UIImage(named: "Q_FavoritesImageRealism")
     }
@@ -457,14 +452,14 @@ class BasicPopularTattooCard: UIView {
 
     let favoritesImage: UIImageView
     let cardsTitleLabel: UILabel
-    let bodyTextLabel: UILabel // New label for body text
+    let bodyTextLabel: UILabel
 
     // MARK: - Initialization
 
     init() {
         favoritesImage = UIImageView()
         cardsTitleLabel = UILabel()
-        bodyTextLabel = UILabel() // Initialize the new label
+        bodyTextLabel = UILabel()
 
         super.init(frame: .zero)
 
@@ -491,7 +486,6 @@ class BasicPopularTattooCard: UIView {
             favoritesImage.heightAnchor.constraint(equalToConstant: Q_TattooImage.Sizes.height)
         ])
 
-        // Add corner radius to favoritesImage
         favoritesImage.layer.cornerRadius = 10.0
         favoritesImage.layer.masksToBounds = true
 
@@ -503,7 +497,7 @@ class BasicPopularTattooCard: UIView {
             cardsTitleLabel.widthAnchor.constraint(lessThanOrEqualToConstant: A_CardsTitleStyles.Restriction.textMaxWidth)
         ])
 
-        addSubview(bodyTextLabel) // Add the new label to the view
+        addSubview(bodyTextLabel)
         bodyTextLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             bodyTextLabel.topAnchor.constraint(equalTo: cardsTitleLabel.bottomAnchor, constant: 10.0), // Add 20.0 points spacing
@@ -516,10 +510,9 @@ class BasicPopularTattooCard: UIView {
         cardsTitleLabel.numberOfLines = 0
         cardsTitleLabel.text = A_CardsTitleStyles.Text.textInscription
 
-        bodyTextLabel.font = A_BodyTextCardsStyles.Font.textFont // Set font for the new label
-        bodyTextLabel.textColor = A_BodyTextCardsStyles.Color.textColorWhite // Set text color for the new label
-        bodyTextLabel.numberOfLines = 0 // Allow multiple lines for the new label
-        // Set any default or common text for the new label here if needed
+        bodyTextLabel.font = A_BodyTextCardsStyles.Font.textFont
+        bodyTextLabel.textColor = A_BodyTextCardsStyles.Color.textColorWhite
+        bodyTextLabel.numberOfLines = 0
 
         favoritesImage.image = UIImage(named: "")
         favoritesImage.contentMode = .scaleAspectFit
@@ -538,7 +531,6 @@ class W_PopularTattooCard: BasicPopularTattooCard {
     }
     
     private func customizeUI() {
-        // Customize properties specific to your subclass
         cardsTitleLabel.text = "Череп с глазками"
         bodyTextLabel.text = "lunarwhisper"
         favoritesImage.image = UIImage(named: "Q_TattooCardImage2")
@@ -557,7 +549,6 @@ class W_PopularTattooCard2: BasicPopularTattooCard {
     }
     
     private func customizeUI() {
-        // Customize properties specific to your subclass
         cardsTitleLabel.text = "Мумий Тролль"
         bodyTextLabel.text = "azureflame"
         favoritesImage.image = UIImage(named: "Q_TattooCardImage1")
@@ -576,7 +567,6 @@ class W_PopularTattooCard3: BasicPopularTattooCard {
     }
     
     private func customizeUI() {
-        // Customize properties specific to your subclass
         cardsTitleLabel.text = "Танец"
         bodyTextLabel.text = "silentspectre"
         favoritesImage.image = UIImage(named: "Q_TattooCardImage")
@@ -586,7 +576,7 @@ class W_PopularTattooCard3: BasicPopularTattooCard {
 class C_MasterCard: UIView {
 
     private let imageName = "Q_MasterSearchImage"
-    private let avatarImageName = "Q_TattooMasterImage" // Имя изображения из assets
+    private let avatarImageName = "Q_TattooMasterImage"
     private let leftMargin: CGFloat = 20.0
     private let topMargin: CGFloat = 20.0
 
@@ -688,7 +678,7 @@ class C_MasterCard: UIView {
 class C_TemporaryMasterCard: UIView {
 
     private let imageName = "Q_MasterSearchImage1"
-    private let avatarImageName = "Q_TattooMasterImage1" // Имя изображения из assets
+    private let avatarImageName = "Q_TattooMasterImage1"
     private let leftMargin: CGFloat = 20.0
     private let topMargin: CGFloat = 20.0
 
@@ -776,11 +766,7 @@ class C_TemporaryMasterCard: UIView {
             masterCardDataView2.leadingAnchor.constraint(equalTo: masterCardDataView.leadingAnchor),
             masterCardDataView3.topAnchor.constraint(equalTo: masterCardDataView2.bottomAnchor, constant: 63),
             masterCardDataView3.leadingAnchor.constraint(equalTo: masterCardDataView2.leadingAnchor),
-
-            // Constraints for avatarImageView
             avatarImageView.leadingAnchor.constraint(equalTo: greenView.leadingAnchor, constant: 20),
-
-            // Constraints for bodyLabel
             bodyLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor, constant: 65),
             bodyLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor)
         ])
