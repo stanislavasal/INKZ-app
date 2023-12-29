@@ -174,6 +174,8 @@ class SO_TattooFeed: UIViewController {
     }
 }
 
+// MARK: - Работающие апи запросы к локальному серверу без стилизации (синхронные)
+
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //
@@ -182,7 +184,7 @@ class SO_TattooFeed: UIViewController {
 //
 //
 //
-//    // MARK: - Переделать под асинхронный как в Tattoo
+//    Переделать под асинхронный как в Tattoo
 //
 //
 //

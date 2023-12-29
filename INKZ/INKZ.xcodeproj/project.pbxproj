@@ -24,7 +24,7 @@
 		EE26C2352B3B5FB0009CDC53 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C2342B3B5FB0009CDC53 /* Structures.swift */; };
 		EE26C2382B3BBBA0009CDC53 /* MastersFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE26C2372B3BBBA0009CDC53 /* MastersFeedViewController.swift */; };
 		EE7C30CB2AEC5130006F5C42 /* CategoriesFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7C30CA2AEC5130006F5C42 /* CategoriesFeedController.swift */; };
-		EE83A48C2B3C7EC400397691 /* MainPageOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83A48B2B3C7EC400397691 /* MainPageOld.swift */; };
+		EE91A2B32B3EDABF0058312D /* MainPageOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91A2B22B3EDABF0058312D /* MainPageOld.swift */; };
 		EE9CD7262B378DF90064E3A1 /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9CD7252B378DF90064E3A1 /* TestController.swift */; };
 		EE9CD7282B3797E70064E3A1 /* TattooFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9CD7272B3797E70064E3A1 /* TattooFeedViewController.swift */; };
 		EEB646BA2AF08FCF001F2DEE /* SuisseIntl-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEB646B92AF08FCF001F2DEE /* SuisseIntl-Bold.otf */; };
@@ -57,7 +57,7 @@
 		EE26C2342B3B5FB0009CDC53 /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
 		EE26C2372B3BBBA0009CDC53 /* MastersFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastersFeedViewController.swift; sourceTree = "<group>"; };
 		EE7C30CA2AEC5130006F5C42 /* CategoriesFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFeedController.swift; sourceTree = "<group>"; };
-		EE83A48B2B3C7EC400397691 /* MainPageOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPageOld.swift; path = "../../../../../.Trash/INKZ/Profile-app/ViewControllers/Old/MainPageOld.swift"; sourceTree = "<group>"; };
+		EE91A2B22B3EDABF0058312D /* MainPageOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageOld.swift; sourceTree = "<group>"; };
 		EE9CD7252B378DF90064E3A1 /* TestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
 		EE9CD7272B3797E70064E3A1 /* TattooFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TattooFeedViewController.swift; sourceTree = "<group>"; };
 		EEB646B92AF08FCF001F2DEE /* SuisseIntl-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SuisseIntl-Bold.otf"; path = "SuisseInt/SuisseIntl-Bold.otf"; sourceTree = SOURCE_ROOT; };
@@ -175,7 +175,7 @@
 			children = (
 				EE0909832ACD897600A8B8C5 /* ViewController.swift */,
 				EED34E7E2AEEE94100004D55 /* AboutUsViewController.swift */,
-				EE83A48B2B3C7EC400397691 /* MainPageOld.swift */,
+				EE91A2B22B3EDABF0058312D /* MainPageOld.swift */,
 			);
 			path = Old;
 			sourceTree = "<group>";
@@ -306,13 +306,13 @@
 				EE26C22F2B3B51A1009CDC53 /* SuperOrganisms.swift in Sources */,
 				EE09099B2ACDA29E00A8B8C5 /* ProfileStorageLogic.swift in Sources */,
 				EE26C22B2B3B5183009CDC53 /* Molecules.swift in Sources */,
-				EE83A48C2B3C7EC400397691 /* MainPageOld.swift in Sources */,
 				EE26C2292B3B5165009CDC53 /* Quarks.swift in Sources */,
 				EED34E7F2AEEE94100004D55 /* AboutUsViewController.swift in Sources */,
 				EE7C30CB2AEC5130006F5C42 /* CategoriesFeedController.swift in Sources */,
 				EE0909842ACD897600A8B8C5 /* ViewController.swift in Sources */,
 				EE9CD7282B3797E70064E3A1 /* TattooFeedViewController.swift in Sources */,
 				EE09099D2ACDA39800A8B8C5 /* ProfileStorageWorker.swift in Sources */,
+				EE91A2B32B3EDABF0058312D /* MainPageOld.swift in Sources */,
 				EE26C2352B3B5FB0009CDC53 /* Structures.swift in Sources */,
 				EE9CD7262B378DF90064E3A1 /* TestController.swift in Sources */,
 				EE0909802ACD897600A8B8C5 /* AppDelegate.swift in Sources */,

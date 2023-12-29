@@ -147,6 +147,8 @@ class SO_MastersFeed: UIViewController {
     }
 }
 
+// MARK: - Работающие апи запросы к локальному серверу без стилизации (асинхронные)
+
 //class TattooFeedViewController: UIViewController {
 //
 //    override func viewDidLoad() {
