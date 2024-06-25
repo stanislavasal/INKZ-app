@@ -14,12 +14,12 @@ struct Sizes {
 class OvalImageView: UIView {
 
     private let imageInfo = [
-        ("ImageMenu1", Sizes(width: 35.0, height: 35.0)),
-        ("ImageMenu2", Sizes(width: 33.0, height: 35.0)),
-        ("ImageMenu3", Sizes(width: 45.0, height: 34.0)),
-        ("ImageMenu4", Sizes(width: 40.0, height: 40.0))
+        ("iconMenu1", Sizes(width: 40.0, height: 40.0)),
+        ("iconMenu2", Sizes(width: 40.0, height: 40.0)),
+        ("iconMenu3", Sizes(width: 40.0, height: 40.0)),
+        ("iconMenu4", Sizes(width: 40.0, height: 40.0))
     ]
-    private let spacing: CGFloat = 22.0
+    private let spacing: CGFloat = 15.0
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,7 +47,7 @@ class OvalImageView: UIView {
             let imageView = UIImageView(image: UIImage(named: imageName))
             imageView.frame = CGRect(
                 x: ovalCenter.x + totalWidth + 40,
-                y: ovalCenter.y + 14,
+                y: ovalCenter.y + 11,
                 width: size.width,
                 height: size.height
             )
@@ -56,25 +56,25 @@ class OvalImageView: UIView {
 
             totalWidth += size.width + spacing
 
-            if imageName == "ImageMenu1" {
+            if imageName == "iconMenu1" {
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageMenu1Tap))
                 imageView.isUserInteractionEnabled = true
                 imageView.addGestureRecognizer(tapGesture)
             }
             
-            if imageName == "ImageMenu2" {
+            if imageName == "iconMenu2" {
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageMenu2Tap))
                 imageView.isUserInteractionEnabled = true
                 imageView.addGestureRecognizer(tapGesture)
             }
             
-            if imageName == "ImageMenu3" {
+            if imageName == "iconMenu3" {
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageMenu3Tap))
                 imageView.isUserInteractionEnabled = true
                 imageView.addGestureRecognizer(tapGesture)
             }
             
-            if imageName == "ImageMenu4" {
+            if imageName == "iconMenu4" {
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageMenu4Tap))
                 imageView.isUserInteractionEnabled = true
                 imageView.addGestureRecognizer(tapGesture)
@@ -88,7 +88,7 @@ class OvalImageView: UIView {
     }
     
     @objc private func handleImageMenu1Tap() {
-        let tattooFeedViewController = SO_CategoriesFeed()
+        let tattooFeedViewController = SO_MainPage()
         if let viewController = self.firstAvailableUIViewController() {
             viewController.navigationController?.pushViewController(tattooFeedViewController, animated: true)
         }
@@ -101,8 +101,9 @@ class OvalImageView: UIView {
         }
     }
     
+    
     @objc private func handleImageMenu3Tap() {
-        let tattooFeedViewController = SO_MastersFeed()
+        let tattooFeedViewController = SO_WriteUs()
         if let viewController = self.firstAvailableUIViewController() {
             viewController.navigationController?.pushViewController(tattooFeedViewController, animated: true)
         }

@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     var profile: ProfileModel = ProfileModel()
     var avatar: String? = nil
     
+    let menu: OvalImageView = {
+        let view = OvalImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     init(profileStorage: ProfileStorageLogic = ProfileStorageWorker()) {
         self.profileStorage = profileStorage
         super.init(nibName: nil, bundle: nil)
@@ -28,74 +34,10 @@ class ViewController: UIViewController {
         
         
         super.viewDidLoad()
-        view.backgroundColor = UIColor(hex: 0xE3E3E3)
+        view.backgroundColor = UIColor(hex: 0xF3F3F3)
         configureUI()
         loadProfile()
         
-        
-        let menuView = UIView()
-        menuView.frame = CGRect(x: (view.frame.width - 255) / 2, y: 685, width: 255, height: 62)
-        menuView.backgroundColor = UIColor.clear
-        
-        let menuMaskLayer = CAShapeLayer()
-        menuMaskLayer.path = UIBezierPath(roundedRect: menuView.bounds, cornerRadius: menuView.frame.height / 2).cgPath
-        menuView.layer.mask = menuMaskLayer
-        
-        let menuBorderLayer = CAShapeLayer()
-        menuBorderLayer.path = menuMaskLayer.path
-        menuBorderLayer.strokeColor = UIColor.white.cgColor
-        menuBorderLayer.fillColor = UIColor.clear.cgColor
-        menuBorderLayer.lineWidth = 2.0
-        menuView.layer.addSublayer(menuBorderLayer)
-        
-        let menuGradientLayer = CAGradientLayer()
-        menuGradientLayer.frame = menuView.bounds
-        menuGradientLayer.opacity = 0.4
-        
-        let startMenuColor = UIColor(hex: 0xFFFFFF).cgColor
-        let endMenuColor = UIColor(hex: 0xF0EFEF).cgColor
-        menuGradientLayer.colors = [startMenuColor, endMenuColor]
-        
-        menuGradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
-        menuGradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-        
-        menuView.layer.insertSublayer(menuGradientLayer, at: 0)
-        
-        let menuBlurEffect = UIBlurEffect(style: .light)
-        let menuBlurView = UIVisualEffectView(effect: menuBlurEffect)
-        menuBlurView.frame = menuView.bounds
-        menuBlurView.alpha = 0.4
-        
-        menuBlurView.contentView.layer.addSublayer(menuGradientLayer)
-        menuView.addSubview(menuBlurView)
-        
-        view.addSubview(menuView)
-        
-        let iconSizeMenu = CGSize(width: 35, height: 35)
-        let iconSpacingMenu: CGFloat = 15
-        let iconCountMenu = 4
-        
-        let iconNamesMenu: [String] = ["iconMenu1", "iconMenu2", "iconMenu3", "iconMenu4"]
-        
-        let totalWidthMenuIcons = CGFloat(iconCountMenu) * (iconSizeMenu.width + iconSpacingMenu) - iconSpacingMenu
-        
-        let startXMenuIcon = (menuView.bounds.width - totalWidthMenuIcons) / 2
-        
-        for (indexMenu, iconNameMenu) in iconNamesMenu.enumerated() {
-            if let iconImageMenu = UIImage(named: iconNameMenu) {
-                let iconButton = UIButton(type: .custom)
-                iconButton.frame = CGRect(x: startXMenuIcon + CGFloat(indexMenu) * (iconSizeMenu.width + iconSpacingMenu), y: 13, width: iconSizeMenu.width, height: iconSizeMenu.height)
-                iconButton.setImage(iconImageMenu, for: .normal)
-                if indexMenu == 0 {
-                            iconButton.addTarget(self, action: #selector(openMainViewController), for: .touchUpInside)
-                        }
-                if indexMenu == 3 {
-                            iconButton.addTarget(self, action: #selector(openViewController), for: .touchUpInside)
-                        }
-                
-                menuView.addSubview(iconButton)
-            }
-        }
         
     }
     
@@ -119,6 +61,15 @@ class ViewController: UIViewController {
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(pickImage))
         profileView.avatarImage.addGestureRecognizer(tapGestureRecognizer)
+        
+        view.addSubview(menu)
+        
+        NSLayoutConstraint.activate([
+            menu.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            menu.topAnchor.constraint(equalTo: view.topAnchor, constant: 710),
+            menu.widthAnchor.constraint(equalToConstant: 290),
+            menu.heightAnchor.constraint(equalToConstant: 65),
+        ])
     }
     
     private func saveProfile() {

@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootNavigationController = RootNavigationController()
         window.rootViewController = rootNavigationController
         
-        let MainViewController = SO_CategoriesFeed()
+        let MainViewController = SO_MainPage()
         rootNavigationController.viewControllers = [MainViewController]
         
         self.window = window

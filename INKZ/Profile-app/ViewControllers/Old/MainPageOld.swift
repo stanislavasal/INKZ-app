@@ -31,7 +31,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         scrollViewMain.frame = view.bounds
         scrollViewMain.contentSize = CGSize(width: view.frame.width, height: 2460)
         view.addSubview(scrollViewMain)
-        view.backgroundColor = UIColor(hex: 0xE3E3E3)
+        view.backgroundColor = UIColor(hex: 0xF3F3F3)
         
         
         searchField.frame = CGRect(x: 20, y: 80, width: 282, height: 53)
@@ -669,7 +669,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Change!
     
     @objc func openAboutUsViewController() {
-            let aboutUsViewController = SO_CategoriesFeed()
+            let aboutUsViewController = SO_MainPage()
             navigationController?.pushViewController(aboutUsViewController, animated: true)
 
         }

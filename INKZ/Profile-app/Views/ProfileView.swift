@@ -17,7 +17,7 @@ class ProfileView: UIView {
         static let offset: CGFloat = 9
         static let offsetFirst: CGFloat = 15
         static let horizontalOffset: CGFloat = 20
-        static let topOffset: CGFloat = 20
+        static let topOffset: CGFloat = 10
         static let fieldHeight: CGFloat = 45
 
 
@@ -56,7 +56,7 @@ class ProfileView: UIView {
     }
  
     private func configureUI() {
-        self.backgroundColor = UIColor(hex: 0xE3E3E3)
+        self.backgroundColor = UIColor(hex: 0xF3F3F3)
         configureAvatar()
         configureFields()
         configureButtons()
@@ -139,9 +139,10 @@ class ProfileView: UIView {
         field.resignFirstResponder()
         field.selectedTextRange = nil
         field.textColor = .black
-        
-        // Добавляем скругления
-        field.layer.cornerRadius = Constants.fieldHeight / 2 // Выберите радиус, который вам нравится
+        field.layer.borderWidth = 1.5
+        field.layer.borderColor = UIColor(hex: 0x737373).cgColor
+
+        field.layer.cornerRadius = Constants.fieldHeight / 5
         field.layer.masksToBounds = true
         
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: Constants.fieldHeight))
